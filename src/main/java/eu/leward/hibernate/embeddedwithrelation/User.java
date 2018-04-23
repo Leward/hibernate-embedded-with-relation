@@ -11,6 +11,9 @@ public class User {
     private String email;
 
     @Embedded
+    @AttributeOverrides({
+            @AttributeOverride(name = "nickname", column = @Column(name = "nickname"))
+    })
     private PlayerProfile playerProfile;
 
     public Long getId() {
